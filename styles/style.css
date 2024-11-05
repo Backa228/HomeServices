@@ -52,7 +52,7 @@ button {
 }
 
 /* #endregion */
-/*Стилі зазамовченням ПОЧАТОК*/
+/*#region Стилі зазамовченням */
 
 :root {
     --Primary-Dark-Blue-1: #142257;
@@ -98,42 +98,41 @@ body {
 }
 
 /*Налаштування адаптиву КІНЕЦ */
-/* Модулі ПОЧАТОК */
+/* Модулі ПОЧАТОК*/
 
-
-/* Модулі КІНЕЦ */
-.block-title{}
-
-.block-title-center{
+.block-title-center {
     text-align: center;
 }
 
-.block-title-inline{
+.block-title-inline {
     grid-template-columns: minmax(auto, 747px) minmax(auto, 613px);
     justify-content: space-between;
     align-items: end;
 }
 
-.block-title__title{
+.block-title__title {
     color: var(--Neutural-Black);
     font-size: clamp(32px, 5vw, 52px);
     font-weight: 700;
     line-height: 1.23;
 }
 
-.block-title__title-big{
+.block-title__title-big {
     font-size: clamp(44px, 5vw, 64px);
 }
 
-.block-title__title-white{
+.block-title__title-white {
     color: var(--Neutural-White);
 }
 
-.block-title__text{
+.block-title__text {
     font-weight: 400;
     line-height: 1.56;
 }
 
+/* Модулі КІНЕЦ */
+ /* #endregion */
+/* #region header*/
 .header {
     background-color: var(--Primary-Dark-Blue-1);
     position: relative;
@@ -297,6 +296,8 @@ body {
     transition: none !important;
 }
 
+/* #endregion header */
+
 .overlay{
     position: fixed;
     top: 0;
@@ -314,4 +315,94 @@ body {
     opacity: 1;
     visibility: visible;
 }
+
+.page{}
+
+.main {
+    background-color: var(--Primary-Dark-Blue-1);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 0 15px 60px 15px;
+    min-height: 100vh;
+}
+
+.main__image {
+    width: clamp(200px, 25vw, 412px);
+    overflow: hidden;
+}
+
+.main__image img{
+    width: 100%;
+    border-radius: 24px;
+    object-position: top;
+    object-fit: cover;
+}
+
+.main__body {
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+}
+
+.main__content {
+    display: flex;
+    flex: 1 1 auto;
+    /*flex-grow: 1; - коеф збільшення(чим більший коеф,
+    тим більший блок)
+    flex-shrink: 1; - коеф зменшення-стиснення (чим більший коеф, 
+    тим меньший блок)        
+    flex-basis: auto; - визначає початкову довжину гнучкого елемента*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 52px;
+}
+
+.main-list__item{
+    color: var(--Neutural-Grey-2);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    position: relative;
+}
+
+.main-list__item:not(:last-child)::after{
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--Neutural-Grey-2);
+}
+
+.main__block-title {}
+
+.block-title {
+    max-width: 670px;
+}
+
+.main-listDone{}
+
+.done__item{}
+
+.main__button{}
+
+.call-button{}
+
+.main__advantages {}
+
+.advantages-main__item {}
+
+.advantages-main__icon {}
+
+.advantages-main__text {}
 
