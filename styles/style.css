@@ -355,6 +355,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 24px;
 }
 
 .main-list{
@@ -390,19 +391,76 @@ body {
     max-width: 670px;
 }
 
-.main-listDone{}
+.main-listDone{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 40px;
+}
 
-.done__item{}
+.done__item{
+    position: relative;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--Primary-Sky-Blue);
+    padding-left: 32px;
+}
 
-.main__button{}
+.done__item::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(/source/images/icons/Quotes.svg);
+    width: 24px;
+    height: 24px;
+}
 
-.call-button{}
+.main__button{
+    display: inline-flex;
+    min-height: 65px;
+    border-radius: 60px;
+    padding: 8px;
+    background-color: var(--Primary-Sky-Blue);
+    justify-content: center;
+    align-items: center;
+    color: var(--Neutural-White);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+}
 
-.main__advantages {}
+.call-button span{
+    padding: 0 16px;
+}
+
+.call-button__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Neutural-White);
+    border-radius: 60px;
+}
+
+.main__advantages {
+    color: var(--Neutural-White, #FFF);
+    font-family: "Plus Jakarta Sans";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+}
 
 .advantages-main__item {}
 
-.advantages-main__icon {}
+.advantages-main__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 60px;
+    padding: 12px;
+    background-color: var(--Primary-Dark-Blue-2);
+}
 
 .advantages-main__text {}
 
