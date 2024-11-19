@@ -334,7 +334,8 @@ body {
     content: "";
     position: absolute;
     bottom: 0;
-    background-color: var(--Neutural-White);
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 26vw;
     height: 45px;
     transition: height 0.3s;
@@ -349,6 +350,15 @@ body {
     right: 0;
     clip-path: polygon(0 100%, 15% 0, 100% 0, 100% 100%); 
 }
+
+/* .main__decor {
+    position: absolute;
+    bottom: 0;
+    height: 45px;
+    width: 26vw;
+    transition: height 0.3s;
+    object-position: right;
+} */
 
 .main__image {
     width: 21vw;/* clamp(200px, 25vw, 412px); */
@@ -443,6 +453,7 @@ body {
     background-image: url(/source/images/icons/Quotes.svg);
     width: 24px;
     height: 24px;
+    background-size: cover;
 }
 
 .main__button{
@@ -550,6 +561,48 @@ body {
         height: 30vh;
     }
 
+    .main-list{
+        column-gap: 34px;
+    }
+
+    .main-list__item{
+        font-size: clamp(18px, 14px, 14px);
+    }
+
+    .main-list__item:not(:last-child)::after{
+        right: -19.4px;
+        width: 3px;
+        height: 3px;
+    }
+
+    .done__item{
+        font-size: 14px;
+        padding: 24px;
+    }
+
+    .done__item::before{
+        width: 16px;
+        height: 16px;
+    }
+
+    .main__button{
+        min-height: 48px;
+        font-size: 18px;
+    }
+
+    .call-button__icon{
+        padding: 8px;
+    }
+
+    .main__advantages{
+        font-size: 14px;
+    }
+
+    .advantages-main__item{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } 
 }
 
 @media (max-width: 767.98px){
