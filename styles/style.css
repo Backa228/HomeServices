@@ -265,21 +265,21 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
         position: fixed;
         gap: 32px;
         top: 0;
         right: 0;
         /* height: calc(100vh - 56px); */
-        height: 100vh;
-        max-width: 320px;
+        height: 100%;
+        /* max-width: 320px; */
+        width: 272px;
         z-index: 5;
         overflow: auto;
         background-color: var(--Primary-Dark-Blue-1);
         padding: 88px 24px 36px 24px;
         transform: translateX(100%);
         transition: transform 0.3s ease;
-
     }
 
     .menu__body.active{
@@ -638,7 +638,7 @@ body {
 
     .done__item{
         font-size: 18px;
-        padding: 24px;
+        padding-left: 26px;
     }
 
     .done__item::before{
@@ -657,6 +657,7 @@ body {
 
     .main__advantages{
         font-size: 14px;
+        row-gap: 24px;
     }
 
     .main-list__item:not(:nth-child(3n))::after {
@@ -677,7 +678,7 @@ body {
 
     .done__item {
         font-size: 14px;
-        padding: 24px;
+        padding-left: 24px;
     }
 
     .done__item::before {
@@ -687,8 +688,8 @@ body {
 
     .main__advantages {
         font-size: 18px;
-        row-gap: 24px;
         column-gap: 24px;
+        position: relative;
     }
 
     .advantages-main__item {
@@ -699,11 +700,23 @@ body {
     .main__advantages::after {
         content: "";
         position: absolute;
-        right: 0;
+        right: 50%;
+        transform: translateX(50%);
         top: 0;
         height: 100%;
         width: 1px;
-        background: linear-gradient(180deg, rgba(79, 102, 183, 0) 0%, rgba(79, 102, 183, 1));
+        background: linear-gradient(180deg, rgba(79, 102, 183, 0) 0%, rgba(79, 102, 183, 1) 48%, rgba(79, 102, 183, 0) 100%);    
+    }
+
+    .main__advantages::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(79, 102, 183, 0) 0%, rgba(79, 102, 183, 1) 48%, rgba(79, 102, 183, 0) 100%);
     }
 
     .main-list__item:not(:nth-child(2n))::after{
