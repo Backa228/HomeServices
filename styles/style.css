@@ -52,7 +52,7 @@ button {
 }
 
 /* #endregion */
-/*#region Стилі зазамовченням */
+/* #region Стилі зазамовченням */
 
 :root {
     --Primary-Dark-Blue-1: #142257;
@@ -98,8 +98,8 @@ body {
 }
 
 /*Налаштування адаптиву КІНЕЦ */
-/* Модулі ПОЧАТОК*/
-
+/* #endregion */
+/* #region Модулі ПОЧАТОК */
 .block-title-center {
     text-align: center;
 }
@@ -130,13 +130,21 @@ body {
     line-height: 1.56;
 }
 
-/* Модулі КІНЕЦ */
- /* #endregion */
+/* #endregion Модулі КІНЕЦ */
+ 
 /* #region header*/
 .header {
-    background-color: var(--Primary-Dark-Blue-1);
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     z-index: 6;
+    transition: transform 0.5s;
+    background-color: var(--Primary-Dark-Blue-1);
+}
+
+header.hidden {
+    transform: translateY(-100%);
 }
 
 .header__container {
@@ -318,7 +326,7 @@ body {
     opacity: 1;
     visibility: visible;
 }
-
+/* #region main*/
 .main {
     background-color: var(--Primary-Dark-Blue-1);
     display: grid;
@@ -327,6 +335,7 @@ body {
     min-height: calc(100vh - 80px);
     position: relative;
     overflow: hidden;
+    margin-top: 80px;
 }
 
 /* .main::before, .main::after{
@@ -742,5 +751,8 @@ body {
 
     .main{
         min-height: calc(100vh - 56px);
+        margin-top: 56px;
     }
 }
+/* #endregion main */
+

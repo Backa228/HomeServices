@@ -31,14 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener ('scroll', () => {
         let scrollTop = window.scrollY || document.documentElement.scrollTop;
         if ((scrollTop > lastScrollTop) && (scrollTop > header.offsetHeight)) {
-            header.classList.add('');
-            header.classList.add('');
+            header.classList.add('hidden');
         } else if (scrollTop < lastScrollTop) {
-            header.classList.remove('');
+            header.classList.remove('hidden');
         } 
-        if (scrollTop < header.offsetHeight) {
-            header.classList.remove('');
-        }
 
     lastScrollTop = scrollTop;
 });
