@@ -775,7 +775,7 @@ header.hidden {
     }
 }
 /* #endregion main */
-
+/* #region Services*/
 .services {
     padding-top: 123px;
     padding-bottom: 64px;
@@ -787,9 +787,7 @@ header.hidden {
 }
 
 .services__body {
-    max-width: 580px;
     padding-top: 100px;
-    padding-right: 20px;
 }
 
 .services-header:not(:last-child) {
@@ -804,7 +802,7 @@ header.hidden {
 
 @media(min-wight: 1200px) {
     .services__body{
-        max-width: 500px;
+        max-width: 580px;
         padding-right: 20px;
     }
 }
@@ -843,13 +841,19 @@ header.hidden {
     line-height: 1.56;
     font-weight: 400;
     color: var(--Neutural-White);
-    max-width: 450px;
+}
+
+@media(min-width: 1280px){
+    .services__info{
+        max-width: 450px;
+    }
 }
 
 .services__info a{
     font-size: 20px;
     font-weight: 600;
     text-decoration: underline;
+    white-space: nowrap;
 }
 
 .services__image {
@@ -857,8 +861,65 @@ header.hidden {
     text-align: center;
 }
 
-@media(max-wight: 1200px){
+.services__image img{
+    max-width: 100%;
+    height: auto;
+}
+
+@media(max-width: 1280px){
+    .services{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
     .services__container{
         grid-template-columns: auto;
     }
+
+    .services__image{
+        order: -1;
+    }
 }
+
+@media(max-width: 991.98px){
+    .services__items{
+        grid-template-columns: auto;
+    }
+    .services__item{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.56;
+    }
+
+    .services__item::before{
+        top: 5px;
+    }
+
+    .services-header:not(:last-child), .services__items {
+        margin-bottom: 48px;
+    }
+        
+    .block-header__title:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .services__items{
+        gap: 28px;
+    }
+}
+
+@media(max-width: 767.98px){
+    .services__body{
+        padding-top: 30px;
+    }
+
+    .services-header:not(:last-child), .services__items{
+        margin-top: 30px;
+    }
+
+    .block-header__title:not(:last-child){
+        margin-bottom: 12px;
+    }
+}
+/* #endregion Services */
+
