@@ -91,6 +91,11 @@ body {
 /*Налаштування адаптиву КІНЕЦ */
 /* #endregion */
 /* #region Модулі ПОЧАТОК */
+.block-title{
+    display: grid;
+    gap: 1.5rem;
+}
+
 .block-title-center {
     text-align: center;
 }
@@ -549,7 +554,7 @@ header.hidden {
     background-color: var(--Neutural-Grey-2);
 }
 
-.block-title {
+.main-block-title {
     max-width: 670px;
 }
 
@@ -798,7 +803,7 @@ header.hidden {
     margin-bottom: 56px;
 }
 
-.block-header__title:not(:last-child){
+.services-header .block-header__title:not(:last-child){
     margin-bottom: 24px;
 }
 
@@ -1044,4 +1049,99 @@ header.hidden {
     }
 }
 /* #endregion Feature*/
+/* #region Advantages */
+.advantages{
+    padding: 26px 60px;
+    transition: all 0.3s;
+}
 
+.advantages__body {
+    background-color: var(--Primary-Dark-Blue-1);
+    border-radius: 24px;
+    padding: 64px 60px;
+    transition: all 0.3s;
+}
+
+.advantages__container {}
+
+.advantages-header {}
+
+.advantages-header:not(:last-child) {
+    margin-bottom: 120px;
+}
+
+.advantages-header::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(79, 102, 183, 0) 0%, rgba(79, 102, 183, 1) 48%, rgba(79, 102, 183, 0) 100%);
+    left: 0;
+    bottom: -60px;
+}
+
+.advantages-item{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.block-title {}
+
+.block-title-inline {}
+
+.block-header__title {}
+
+.block-title__title {}
+
+.block-header__text {}
+
+.block-title__text {}
+
+.advantages__item {}
+
+.item-advantages {}
+
+.item-advantages__icon {}
+
+.item-advantages__body {}
+
+.irem-advantages__title {}
+
+.item-advantages__text {}
+
+@media (max-width: 991.98px) {
+    .advantages{
+        padding: 22px 32px;
+    }
+
+    .advantages__body{
+        padding: 48px 24px;
+    }
+
+    .advantages-header:not(:last-child) {
+        margin-bottom: 76px;
+    }
+
+    .advantages-header::after{
+        bottom: -38px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .advantages {
+        padding: 20px 24px;
+    }
+        
+    .advantages__body {
+        padding: 32px 32px;
+    }
+
+    .advantages-header:not(:last-child) {
+        margin-bottom: 52px;
+    }
+        
+    .advantages-header::after {
+        display: none;
+    }
+}
+/* #endregion Advantages*/
