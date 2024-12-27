@@ -1432,6 +1432,8 @@ header.hidden {
 .slide-reviews__text {
     max-width: 730px;
     display: inline-block;
+    font-size: 20px;
+    line-height: 1.6;
 }
 
 .slide-reviews__text:not(:last-child){
@@ -1456,7 +1458,11 @@ header.hidden {
     max-width: 100%;
 }
 
-.slide-reviews__body {
+.slide-reviews__name {
+    color: var(--Neutural-Black);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .slide-reviews__rating {
