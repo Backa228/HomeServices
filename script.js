@@ -39,19 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScrollTop = scrollTop;
 });
 
-    // const swiper = new Swiper('.reviews__slider', {
-    //     sliderPerView: 1, 
-    //     spaceBetween: 20, 
-    //     navegation: {
-    //         nextEl: "swiper-button-next", 
-    //         prevEl: "swiper-button-prev",
-    //     },
-    //     pagination: {
-    //         el: "swiper-pagination", 
-    //         clickable: true, 
-    //     }, 
-    //     loop: true,
-    // })
+    
 
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.reviews__slider', {
+        sliderPerView: 1, 
+        spaceBetween: 20, 
+        navegation: {
+            nextEl: ".reviews__arrow-right", 
+            prevEl: ".reviews__arrow-left",
+        },
+        pagination: {
+            el: ".swiper-pagination", 
+            clickable: true, 
+        }, 
+        loop: true,
+    })
+})
