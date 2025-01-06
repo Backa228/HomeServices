@@ -1520,7 +1520,7 @@ header.hidden {
 }
 
 .insights-header {
-    max-width: 650px;
+    max-width: 695px;
     /* margin: 0 auto; */
 }
 
@@ -1536,7 +1536,7 @@ header.hidden {
 
 .insights__info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 48px;
 }
 
@@ -1583,6 +1583,11 @@ header.hidden {
     overflow: hidden;
 }
 
+.item-info__text-par.view-more{
+    max-height: none;
+    gap: 12px;
+}
+
 .item-info__tags {
     display: flex;
     gap: 12px;
@@ -1598,8 +1603,60 @@ header.hidden {
 }
 
 .insights__more {
+    display: flex;
+    color: var(--Primary-Sky-Blue);
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.33;
+    background: url(/source/images/insights/chevron-right.svg) right no-repeat;
+    padding-right: 24px;
+    padding-bottom: 6px;
+}
+
+.insights__more:hover{
+    text-decoration: underline;
 }
 
 .more__title {
+}
+
+@media (max-width: 991.98px) {
+    .info-text__title{
+        font-size: 28px;
+        line-height: 1.33;
+    }
+}
+@media (max-width: 767.98px) {
+    .info-text__title{
+        font-size: 24px;
+    }
+
+    .insights{
+        padding: 60px 0;
+    }
+
+    .insights__container .insights__info{
+        gap: 32px;
+    }
+
+    .info__item{
+        gap: 16px;
+    }
+
+    .item-info__text{
+        gap: 12px;
+    }
+}
+@media (max-width: 479.98px) {
+    .insights__info{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .info-text__title{
+        font-size: 20px;
+        line-height: 1.4;
+    }
 }
 /* #endregion insights */
