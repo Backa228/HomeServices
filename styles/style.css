@@ -1581,16 +1581,20 @@ header.hidden {
 .item-info__text-par{
     max-height: 84px;
     overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
 }
 
 .item-info__text-par.view-more{
-    max-height: none;
-    gap: 12px;
+    overflow: visible;
+    max-height: 500px;
+    opacity: 1;
 }
 
 .item-info__tags {
     display: flex;
     gap: 12px;
+    margin-top: auto;
 }
 
 .tag {
@@ -1610,9 +1614,16 @@ header.hidden {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.33;
-    background: url(/source/images/insights/chevron-right.svg) right no-repeat;
-    padding-right: 24px;
-    padding-bottom: 6px;
+}
+
+.more__image{
+    width: 24px;
+    height: 24px;
+    margin-top: 6px;
+}
+
+.more__image.less{
+    transform: scaleX(-1);
 }
 
 .insights__more:hover{

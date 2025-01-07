@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const view = document.querySelector('.insights__more')
 const textMore = document.querySelectorAll('.item-info__text-par')
+const arrowMore = document.querySelector('.more__image')
+const moreTitle = document.querySelector('.more__title')
 console.log(view)
 console.log(textMore)
 
@@ -69,5 +71,19 @@ view.addEventListener('click', function(){
     textMore.forEach(text => {
         text.classList.toggle('view-more')
     })
-    this.textContent = this.textContent === 'View More' ? 'View Less' : 'View More'
+    const isExpanded = moreTitle.textContent.trim() === 'View More'
+    moreTitle.textContent = isExpanded ? 'View Less' : 'View More'
+    
+    if (this.textContent.trim() === 'View Less'){
+        arrowMore.classList.add('less')
+    } else {
+        arrowMore.classList.remove('less')
+    }
 })
+
+// const splide = new Splide ('.splide', {
+//     perPage 1,
+//     gap: '30px', 
+//     pagination: false,
+// })
+// splide.mount
