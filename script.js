@@ -81,6 +81,48 @@ view.addEventListener('click', function(){
     }
 })
 
+const cards = document.querySelectorAll('.item-info__tags')
+console.log(cards)
+
+function toggleText(tag){
+    if(tag.textContent === '...'){
+        tag.textContent = tag.dataset.originalText
+    } else {
+        tag.textContent = '...'
+    }
+}
+
+function handleScreenChange(event){
+    cards.forEach((card) => {
+        const tags = card.querySelectorAll('.tag')
+        if(tags.length === 0) return
+        const lastTag = tags[tags.length - 1]
+
+        if(!lastTag.dataset.originalText){
+            lastTag.dataset.originalText = lastTag.textContent
+        }
+
+        if (event.matches){
+            lastTag.textContent = '...'
+            lastTag.style.cursor = 'pointer'
+            lastTag.addEventListener('click', () => toggleText(lastTag))
+        } else {
+            lastTag.textContent = lastTag.dataset.originalText
+            lastTag.style.cursor = 'default'
+            lastTag.replaceWith(lastTag.cloneNode(true))
+        }
+    })
+}
+
+//створили(ініціалізували) медіазапит
+const mediaQuery = window.matchMedia('(max-width: 415px)')
+
+//перевірка на медізапит при завантиженні сторінки
+handleScreenChange(mediaQuery)
+
+//перевірка на медізапит при зміні розміру вікна
+mediaQuery.addEventListener('change', handleScreenChange)
+
 // const splide = new Splide ('.splide', {
 //     perPage 1,
 //     gap: '30px', 

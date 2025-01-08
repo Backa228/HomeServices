@@ -1595,6 +1595,7 @@ header.hidden {
     display: flex;
     gap: 12px;
     margin-top: auto;
+    flex-wrap: wrap;
 }
 
 .tag {
