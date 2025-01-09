@@ -1379,6 +1379,7 @@ header.hidden {
 
 .reviews__container {
     max-width: 1130px;
+    position: relative;
 }
 
 .reviews-header {
@@ -1388,10 +1389,6 @@ header.hidden {
 
 .reviews-header:not(:last-child){
     margin-bottom: 90px;
-}
-
-.reviews__body{
-    position: relative;
 }
 
 .slider-reviews {
@@ -1455,27 +1452,72 @@ header.hidden {
 .slide-reviews__rating {
 }
 
-.reviews__arrow {
+.splide__slide{
+    max-height: 500px;
+    text-align: center;
+}
+
+.splide__arrows {
+
+}
+
+.splide__arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 48px !important;
-    height: 48px !important;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: var(--Primary-Sky-Blue) url(/source/images/reviews/IC_arrow-Left.svg) center no-repeat;
+    cursor: pointer;
+    opacity: 1;
+    transition: background-color 0.2s ease, border-radius 0.2s ease;
 }
-.reviews__arrow-left {
+
+.splide__arrow--prev {
     left: 0;
 }
-.reviews__arrow-right {
+
+.splide__arrow--next {
     right: 0;
     transform: translateY(-50%) rotate(-180deg);
 }
 
-.swiper__pagination{
+.splide__arrow:disabled{
+    background-color: var(--Soft-Grey);
+    cursor: not-allowed;
+    opacity: 1;
+    pointer-events: none;/*прибирає всі події для кнопки, включно з hover*/
+    border-radius: 15px;
+}
+
+.splide__arrow:not(:disabled):hover{
+    background-color: var(--Primary-Dark-Blue-2);
+}
+
+.splide-pagination{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 66px;
+}
+
+.splide-pagination__button{
     width: 12px;
     height: 12px;
-    background-color: var(--Neutural-Grey-2);
+    background-color: var(--Soft-Grey);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.splide-pagination__button.is-active{
+    background-color: var(--Primary-Sky-Blue);
+}
+
+.splide-pagination__button:hover{
+  background-color: var(--Neutural-Grey-2);
 }
   
 @media (max-width: 991.98px) {
@@ -1506,7 +1548,7 @@ header.hidden {
     }
 }
 /* #endregion reviews */
-/* region insights */
+/* #region insights */
 .insights {
     padding: 0 0 85px 0;
 }
