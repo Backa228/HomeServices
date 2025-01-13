@@ -1450,7 +1450,28 @@ header.hidden {
 }
 
 .slide-reviews__rating {
+    display: flex;
+    gap: 10.5px;
 }
+
+.star-input{
+    display: none;
+}
+
+.star{
+    width: 26px;
+    height: 25px;
+    display: inline-block;
+    background: url(/source/images/reviews/Ic_24-Star-dark.svg) center no-repeat;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+/* ~ - означає, що вибираються тільки суміжніні алементи, 
+ті що йдуть після input на тому ж рівні вкладеності*/
+.star-input:checked ~ .star{
+  background: url(/source/images/reviews/Ic_24-Star-light.svg) center no-repeat;
+}
+
 
 .splide__slide{
     max-height: 500px;
@@ -1476,11 +1497,13 @@ header.hidden {
 
 .splide__arrow--prev {
     left: 0;
+    margin-left: 30px;
 }
 
 .splide__arrow--next {
     right: 0;
     transform: translateY(-50%) rotate(-180deg);
+    margin-right: 30px;
 }
 
 .splide__arrow:disabled{
@@ -1531,6 +1554,18 @@ header.hidden {
 
     .slide-reviews__logo:not(:last-child){
         margin-bottom: 32px;
+    }
+
+    .splide__arrow{
+        top: 100%;  
+    }
+
+    .splide__arrow--prev{
+      left: 30px;
+    }
+
+    .splide__arrow--next{
+      right: 30px;
     }
 }
   

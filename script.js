@@ -156,3 +156,13 @@ if (paginationContainer) {
 
   paginationContainer.querySelector('.splide-pagination__button').classList.add('is-active');
 }
+
+const inputs = document.querySelectorAll('.star-input');
+
+inputs.forEach((input, index) => {
+    input.addEventListener('change', () => {
+        inputs.forEach((inp, idx) => {
+            inp.checked = idx <= index
+        })
+    })
+})
