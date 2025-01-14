@@ -595,7 +595,7 @@ header.hidden {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(/source/images/icons/Quotes.svg);
+  background-image: url(../source/images/icons/Quotes.svg);
   width: 24px;
   height: 24px;
   background-size: cover;
@@ -867,7 +867,7 @@ header.hidden {
   content: "";
   left: 0;
   top: 4px;
-  background-image: url(/source/images/icons/Ic_24-Check.svg);
+  background-image: url(../source/images/icons/Ic_24-Check.svg);
   width: 16px;
   height: 16px;
   background-size: cover;
@@ -1104,7 +1104,7 @@ header.hidden {
     transform: translate(0, -50%);
     height: 100%;
     width: 45px;
-    background: url(/source/images/decoration\ advantages1.svg) center no-repeat;
+    background: url(../source/images/decoration\ advantages1.svg) center no-repeat;
   }
 }
 .advantages__body::after {
@@ -1462,14 +1462,14 @@ header.hidden {
     width: 26px;
     height: 25px;
     display: inline-block;
-    background: url(/source/images/reviews/Ic_24-Star-dark.svg) center no-repeat;
+    background: url(../source/images/reviews/Ic_24-Star-dark.svg) center no-repeat;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 /* ~ - означає, що вибираються тільки суміжніні алементи, 
 ті що йдуть після input на тому ж рівні вкладеності*/
 .star-input:checked ~ .star{
-  background: url(/source/images/reviews/Ic_24-Star-light.svg) center no-repeat;
+  background: url(../source/images/reviews/Ic_24-Star-light.svg) center no-repeat;
 }
 
 
@@ -1489,7 +1489,7 @@ header.hidden {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--Primary-Sky-Blue) url(/source/images/reviews/IC_arrow-Left.svg) center no-repeat;
+    background: var(--Primary-Sky-Blue) url(../source/images/reviews/IC_arrow-Left.svg) center no-repeat;
     cursor: pointer;
     opacity: 1;
     transition: background-color 0.2s ease, border-radius 0.2s ease;
