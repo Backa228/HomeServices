@@ -219,6 +219,11 @@ header.hidden {
 }
 
 .header__menu {
+  
+}
+
+.menu{
+  justify-content: center;
 }
 
 .menu__list {
@@ -240,10 +245,6 @@ header.hidden {
   .menu__list {
     column-gap: 15px;
   }
-}
-
-.menu {
-  justify-self: center;
 }
 
 .menu__icon {
@@ -292,6 +293,10 @@ header.hidden {
 }
 /* Burger */
 .menu__icon {
+}
+
+.body-no-scroll{
+  overflow: hidden;
 }
 
 .icon-menu {
@@ -393,11 +398,10 @@ header.hidden {
   background-color: var(--Primary-Dark-Blue-1);
   display: grid;
   grid-template-columns: auto 1fr auto;
-  padding: 0 15px 60px 15px;
-  min-height: calc(100vh - 80px);
+  padding: 80px 15px 60px 15px;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
-  margin-top: 80px;
 }
 
 /* .main::before, .main::after{
@@ -808,8 +812,7 @@ header.hidden {
   }
 
   .main {
-    min-height: calc(100vh - 56px);
-    margin-top: 56px;
+    padding-top: 56px;
   }
 }
 /* #endregion main */

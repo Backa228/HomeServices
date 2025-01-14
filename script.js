@@ -6,17 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('overlay')
     let lastScrollTop = 0;
     const header = document.querySelector('.header');
+    const body = document.body;
 
     menuToggle.addEventListener('click', () => {
         menuBody.classList.toggle('active');
         menuToggle.classList.toggle('open');
         overlay.classList.toggle('active');
+        body.classList.toggle('body-no-scroll')
     });
 
     overlay.addEventListener('click', () => {
         menuBody.classList.remove('active');
         menuToggle.classList.remove('open');
         overlay.classList.remove('active');
+         body.classList.remove('body-no-scroll')
     });
 
     window.addEventListener('resize', () => {
@@ -25,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.remove('open');
             overlay.classList.remove('active');
             menuBody.classList.add('no-transition')
+            body.classList.remove('body-no-scroll')
         } else {
             menuBody.classList.remove('no-transition')
         }
@@ -157,12 +161,16 @@ if (paginationContainer) {
   paginationContainer.querySelector('.splide-pagination__button').classList.add('is-active');
 }
 
-const inputs = document.querySelectorAll('.star-input');
+const slides = document.querySelectorAll('.splide__slide');
 
-inputs.forEach((input, index) => {
-    input.addEventListener('change', () => {
-        inputs.forEach((inp, idx) => {
-            inp.checked = idx <= index
+slides.forEach(slide => {
+    const inputs = slide.querySelectorAll('.star-input');
+
+    inputs.forEach((input, index) => {
+        input.addEventListener('change', () => {
+            inputs.forEach((inp, idx) => {
+                inp.checked = idx <= index
         })
     })
 })
+});
