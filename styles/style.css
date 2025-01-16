@@ -223,7 +223,7 @@ header.hidden {
 }
 
 .menu{
-  justify-content: center;
+  justify-self: center;
 }
 
 .menu__list {
@@ -369,7 +369,7 @@ header.hidden {
 }
 
 .icon-menu.open img {
-  content: url("/source/images/IC_x.svg");
+  content: url("../source/images/IC_x.svg");
 }
 .menu__body.no-transition {
   transition: none !important;
