@@ -50,12 +50,12 @@ button {
 
 /* #endregion */
 /* #region Стилі зазамовченням */
-
 :root {
   --Primary-Dark-Blue-1: #142257;
   --Primary-Dark-Blue-2: #1f3584;
   --Neutural-Grey-1: #545971;
   --Neutural-Grey-2: #9ea3b5;
+  --Neutural-Light-Grey: #f3f5f9;
   --Soft-Grey: #e3e6f0;
   --Light-Grey: #f3f5f9;
   --Primary-Sky-Blue: #15b2f5;
@@ -1750,8 +1750,9 @@ header.hidden {
 
 .questions__container {
   display: grid;
-  grid-template-columns: auto 43.385417%;
-  gap: 20px;
+  grid-template-columns: auto 60%; /* 833/1440 */
+  column-gap: 20px;
+  row-gap: 32px;
 }
 
 .questions-header {
@@ -1785,12 +1786,13 @@ header.hidden {
 .spoiller {
   padding: 24px 32px;
   border-radius: 12px;
-  background-color: var(--Light-Grey); 
+  background-color: var(--Neutural-White); 
   transition: background-color 0.5s ease;
 }
 
-.spoiller.open{
-  background-color: var(--Neutural-Grey-2);
+.spoiller.open:not(:last-child) {
+  background-color: var(--Neutural-Light-Grey);
+  margin-bottom: 5px;
 }
 
 .spoiller__title {
@@ -1807,21 +1809,43 @@ header.hidden {
 .spoiller__title img{
   width: 32px;
   height: 32px;
-  transition: transforn 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.spoiller__title.active img{
-  transition: rotate(180deg);
+.spoiller__title.active img {
+  transform: rotate(180deg);
 }
 
 .spoiller__text {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  padding-top: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-haight 0.5s ease, padding-top 0.5s ease;
+}
+
+.spoiller__text.active{
+  max-height: 500px;
   padding-top: 16px;
 }
 
 @media (max-width: 991.98px) {
+  .questions__container{
+    grid-template-columns: auto;
+  }
+
+  .questions-header{
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .spoiller-title{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+  }
 }
 
 @media (max-width: 767.98px) {

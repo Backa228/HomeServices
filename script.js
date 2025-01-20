@@ -80,7 +80,7 @@ view.addEventListener('click', function(){
     const isExpanded = moreTitle.textContent.trim() === 'View More'
     moreTitle.textContent = isExpanded ? 'View Less' : 'View More'
     
-    if (this.textContent.trim() === 'View Less'){
+    if(this.textContent.trim() === 'View Less'){
         arrowMore.classList.add('less')
     } else {
         arrowMore.classList.remove('less')
@@ -174,3 +174,20 @@ slides.forEach(slide => {
     })
 })
 });
+
+const spoillers = document.querySelectorAll('.spoiller')
+
+spoillers.forEach(spoiller => {
+    spoiller.addEventListener('click', () => {
+        spoiller.classList.toggle("open")
+
+        const title = spoiller.querySelector('.spoiller__title')
+        title.classList.toggle('active')
+
+        const content = spoiller.querySelector('.spoiller__text')
+        content.classList.toggle('active')
+    })
+})
+
+// .parentElement - пошук батьківського елемента
+// .nextSiplingElement - пошук наступного елемента на одному рівні вкладеності ('брата/сестри')
