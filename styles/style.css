@@ -1870,22 +1870,27 @@ header.hidden {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  position: relative;
-}
-
-.talk__container::before{
-  content: "";
-  position: absolute;
-  background: url(../source/images/Shape-big.svg) top left no-repeat;
-  top: 0;
-  left: 0;
-  width: 100%;
-  aspect-ratio: 581 / 45; /* 581/45 */
 }
 
 .talk__content {
   padding-top: 165px;
   padding-bottom: 105px;
+  position: relative;
+}
+
+.talk__content::before {
+  content: "";
+  position: absolute;
+  /* background: url(../source/images/Shape-big.svg) -7% 0 / 83% no-repeat; */
+  background-image: url(../source/images/Shape-big.svg);
+  background-position: top left;
+  background-size: 83%;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 581 / 45;
+  transition: background-position 0.5s ease;
 }
 
 .talk__block-title {}
@@ -1903,45 +1908,44 @@ header.hidden {
   margin-bottom: 36px;
 }
 
-.talk__image{
+.talk__image {
   align-self: flex-end;
   overflow: visible;
-  background: url(../source/images/Image\ 6.png) center no-repeat;
+}
+
+.talk__image img {
   width: 120%;
-  height: 100%;
+  height: auto;
   margin-left: 20%;
 }
 
 @media (max-width: 991.98px) {
+  .talk__container {
+    grid-template-columns: auto;
+  }
   .talk__content {
     padding-top: 70px;
     padding-bottom: 30px;
     text-align: center
   }
 
-  .talk__container {
-    grid-template-columns: auto;
-  }
-
   .talk-listDone{
     justify-content: center;
   }
 
-  .talk__container::before {
-    background: url(../source/images/Shape-big.svg) top left no-repeat;
-    left: 50%;
-    transform: translate(-50%, 0);
-    aspect-ratio: 299 / 45;
+  .talk__image img{
+    width: 110%;
+    height: auto;
+    margin-left: -10%;
+  }
+
+  .talk__content::before{
+    background-position: center top;
   }
 }
 
 @media (max-width: 767.98px) {
-  /* .talk__image img{
-    background: url(../source/images/Image\ 7.png) center no-repeat;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  } */
+
 }
 
 @media (max-width: 479.98px) {
