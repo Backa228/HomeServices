@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastScrollTop = 0;
     const header = document.querySelector('.header');
     const body = document.body;
+    const headerLinks = document.querySelectorAll('.menu__link');
 
     menuToggle.addEventListener('click', () => {
         menuBody.classList.toggle('active');
@@ -21,6 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.remove('active');
          body.classList.remove('body-no-scroll')
     });
+
+    headerLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            menuBody.classList.remove('active');
+            menuToggle.classList.remove('open');
+            overlay.classList.remove('active');
+            body.classList.remove('body-no-scroll')
+        });
+    })
+ 
+
 
     window.addEventListener('resize', () => {
         if (window.innerWidth > 767.98) {
@@ -204,3 +216,4 @@ function updateImageSource() {
 
 updateImageSource()
 window.addEventListener('resize', updateImageSource)
+
